@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>cj.life</groupId>
+        <artifactId>cj-life-ultimate</artifactId>
+        <!--不要指定为snapshots版。只指定正式版，会依据父pom的环境而变化-->
+        <version>0.0.1</version>
+        <!--        <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
+    </parent>
+    <groupId>cj.life</groupId>
+    <artifactId>cj-life-auth</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0</version>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <cj-life-auth-core.version>0.0.1-SNAPSHOT</cj-life-auth-core.version>
+        <cj-life-auth-remote.version>0.0.1-SNAPSHOT</cj-life-auth-remote.version>
+        <cj-life-auth-starter.version>0.0.1-SNAPSHOT</cj-life-auth-starter.version>
+    </properties>
+    <profiles>
+        <profile>
+            <id>release</id>
+            <properties>
+                <cj-life-auth-core.version>0.0.1</cj-life-auth-core.version>
+                <cj-life-auth-remote.version>0.0.1</cj-life-auth-remote.version>
+                <cj-life-auth-starter.version>0.0.1</cj-life-auth-starter.version>
+            </properties>
+        </profile>
+    </profiles>
+    <modules>
+        <module>cj-life-auth-core</module>
+        <module>cj-life-auth-remote</module>
+        <module>cj-life-auth-starter</module>
+    </modules>
+</project>
