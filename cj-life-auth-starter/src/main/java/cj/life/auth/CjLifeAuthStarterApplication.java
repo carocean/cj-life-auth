@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
-@SpringBootApplication(scanBasePackages = {"cj.life.ability", "cj.life.auth"})
+@SpringBootApplication(scanBasePackages = { "cj.life.auth"})
 @EnableEurekaClient
 @EnableFeignClients(basePackages = "cj.life.auth")
 public class CjLifeAuthStarterApplication {

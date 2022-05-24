@@ -1,3 +1,31 @@
+spring:
+  redis:
+    port: 6379
+    database: 0
+    password: 123456
+    host: localhost
+  jta:
+    atomikos:
+      connectionfactory:
+        max-lifetime:
+#    sentinel:
+#      master: local-master
+#      nodes: 192.168.88.103:26380,192.168.88.103:26379
+#      password: 123456
 logging:
   level:
     root: info
+life:
+  security:
+    auth_web:
+      host: http://localhost:8083
+      confirm_access_url: /confirm_access
+      login_url: /login
+    whitelist:
+      - /login
+      - /oauth/**
+      - /logout
+    static_resources:
+      - /assets/**
+      - /css/**
+      - /images/**
