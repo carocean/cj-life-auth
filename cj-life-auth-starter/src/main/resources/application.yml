@@ -1,4 +1,20 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
 spring:
+  profiles:
+    active: ${life.spring.profiles.active:dev}
+  mvc:
+    pathmatch:
+      #swagger2的bug，只认这种方式，而springboot2.6默认已不是这种匹配模式。否则启动时报错
+      #不配的话报：at springfox.documentation.spring.web.WebMvcPatternsRequestConditionWrapper.getPatterns
+      matching-strategy: ANT_PATH_MATCHER
+  application:
+    #调用者feign只认spring.application.name，不认eureka.instance.appname配置应用名
+    #所以不论服务提供者还是feign消费者，spring.application.name和eureka.instance.appname都配置就最好了
+    #feign调用方大小写不区分，而注册中心永远显示为大写
+    name: cj-life-auth
   redis:
     port: 6379
     database: 0
@@ -18,7 +34,7 @@ logging:
 life:
   security:
     auth_web:
-      host: http://localhost:8083
+      host: ${life.security_auth_web_host:http://localhost:8083}
       confirm_access_url: /confirm_access
       login_url: /login
     whitelist:
