@@ -92,6 +92,10 @@
                         <life.EUREKA_SERVER_URL>http://localhost:8761/eureka/</life.EUREKA_SERVER_URL>
                         <life.hostname>localhost</life.hostname>
                         <life.security_auth_web_host>http://localhost:8083</life.security_auth_web_host>
+                        <life.spring_redis_host>localhost</life.spring_redis_host>
+                        <life.spring_redis_port>6379</life.spring_redis_port>
+                        <life.spring_redis_pwd>123456</life.spring_redis_pwd>
+                        <life.spring_redis_db>0</life.spring_redis_db>
                     </env>
                     <!--指定远程 docker api地址 远程仓库-->
                     <!--                    <dockerHost>http://localhost:2375</dockerHost>-->

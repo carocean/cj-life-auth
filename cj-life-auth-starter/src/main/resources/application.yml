@@ -16,10 +16,10 @@ spring:
     #feign调用方大小写不区分，而注册中心永远显示为大写
     name: cj-life-auth
   redis:
-    port: 6379
-    database: 0
-    password: 123456
-    host: localhost
+    port: ${life.spring_redis_port:6379}
+    database: ${life.spring_redis_db:0}
+    password: ${life.spring_redis_pwd:123456}
+    hostName: ${life.spring_redis_host:localhost}
   jta:
     atomikos:
       connectionfactory:
@@ -34,7 +34,7 @@ logging:
 life:
   security:
     auth_web:
-      host: ${life.security_auth_web_host:http://localhost:8083}
+      host: ${life.security_auth_web_host:http://localhost:8060}
       confirm_access_url: /confirm_access
       login_url: /login
     whitelist:
