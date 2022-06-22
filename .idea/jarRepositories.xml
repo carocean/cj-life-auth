@@ -9,6 +9,11 @@
     <remote-repository>
       <option name="id" value="life" />
       <option name="name" value="life" />
+      <option name="url" value="http://localhost:65000/repository/life/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="life" />
+      <option name="name" value="life" />
       <option name="url" value="http://localhost:65000/nexus/content/repositories/life" />
     </remote-repository>
     <remote-repository>
@@ -20,6 +25,11 @@
       <option name="id" value="jboss.community" />
       <option name="name" value="JBoss Community repository" />
       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="life-snapshots" />
+      <option name="name" value="life-snapshots" />
+      <option name="url" value="http://localhost:65000/repository/life-snapshots/" />
     </remote-repository>
   </component>
 </project>
