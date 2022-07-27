@@ -18,7 +18,7 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-        <cj-life-auth-core.version>0.0.1-SNAPSHOT</cj-life-auth-core.version>
+        <cj-life-auth-framework.version>0.0.1-SNAPSHOT</cj-life-auth-framework.version>
         <cj-life-auth-remote.version>0.0.1-SNAPSHOT</cj-life-auth-remote.version>
         <cj-life-auth-starter.version>0.0.1-SNAPSHOT</cj-life-auth-starter.version>
     </properties>
@@ -26,14 +26,14 @@
         <profile>
             <id>release</id>
             <properties>
-                <cj-life-auth-core.version>0.0.1</cj-life-auth-core.version>
+                <cj-life-auth-framework.version>0.0.1</cj-life-auth-framework.version>
                 <cj-life-auth-remote.version>0.0.1</cj-life-auth-remote.version>
                 <cj-life-auth-starter.version>0.0.1</cj-life-auth-starter.version>
             </properties>
         </profile>
     </profiles>
     <modules>
-        <module>cj-life-auth-core</module>
+        <module>cj-life-auth-framework</module>
         <module>cj-life-auth-remote</module>
         <module>cj-life-auth-starter</module>
     </modules>

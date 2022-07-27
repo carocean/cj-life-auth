@@ -34,8 +34,8 @@
         </dependency>
         <dependency>
             <groupId>cj.life</groupId>
-            <artifactId>cj-life-auth-core</artifactId>
-            <version>${cj-life-auth-core.version}</version>
+            <artifactId>cj-life-auth-framework</artifactId>
+            <version>${cj-life-auth-framework.version}</version>
         </dependency>
 
 
