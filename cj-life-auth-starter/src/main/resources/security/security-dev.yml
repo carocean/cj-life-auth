@@ -1,0 +1,14 @@
+life:
+  security:
+    auth_web:
+      host: ${cj.life.security_auth_web_host:http://localhost:8060}
+      confirm_access_url: /confirm_access
+      login_url: /login
+    whitelist:
+      - /login
+      - /oauth/**
+      - /logout
+    static_resources:
+      - /assets/**
+      - /css/**
+      - /images/**

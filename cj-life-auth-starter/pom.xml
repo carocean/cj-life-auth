@@ -21,7 +21,12 @@
             <artifactId>cj-life-ability-banner</artifactId>
             <version>0.0.1</version>
         </dependency>
-
+        <dependency>
+            <groupId>cj.life</groupId>
+            <artifactId>cj-life-ability-config</artifactId>
+            <type>pom</type>
+            <version>0.0.1</version>
+        </dependency>
         <dependency>
             <groupId>cj.life</groupId>
             <artifactId>cj-life-ability-eureka</artifactId>
@@ -86,16 +91,18 @@
                     <!--docker的环境变量模拟在docker run 命令于中输入 -e 变量名-->
                     <!--此处定义的值是dockerfile运行时的默认值，在用docker-compose或run启动时可通过-e参数覆盖掉-->
                     <env>
-                        <life.spring.profiles.active>prod</life.spring.profiles.active>
+                        <cj.life.spring.profiles.active>prod</cj.life.spring.profiles.active>
 <!--                        <life.register-with-eureka>false</life.register-with-eureka>-->
 <!--                        <life.fetch-registry>false</life.fetch-registry>-->
-                        <life.EUREKA_SERVER_URL>http://localhost:8761/eureka/</life.EUREKA_SERVER_URL>
-                        <life.hostname>localhost</life.hostname>
-                        <life.security_auth_web_host>http://localhost:8083</life.security_auth_web_host>
-                        <life.spring_redis_host>localhost</life.spring_redis_host>
-                        <life.spring_redis_port>6379</life.spring_redis_port>
-                        <life.spring_redis_pwd>123456</life.spring_redis_pwd>
-                        <life.spring_redis_db>0</life.spring_redis_db>
+                        <cj.life.EUREKA_SERVER_URL>http://localhost:8761/eureka/</cj.life.EUREKA_SERVER_URL>
+                        <cj.life.security_auth_web_host>http://localhost:8083</cj.life.security_auth_web_host>
+                        <cj.life.spring_redis_host>localhost</cj.life.spring_redis_host>
+                        <cj.life.spring.redis.port>6379</cj.life.spring.redis.port>
+                        <cj.life.spring.redis.password>123456</cj.life.spring.redis.password>
+                        <cj.life.spring.redis.db>0</cj.life.spring.redis.db>
+                        <cj.life.spring.redis.timeout>5000</cj.life.spring.redis.timeout>
+                        <cj.life.spring.redis.sentinel.master>local-master</cj.life.spring.redis.sentinel.master>
+                        <cj.life.spring.redis.sentinel.nodes></cj.life.spring.redis.sentinel.nodes>
                     </env>
                     <!--指定远程 docker api地址 远程仓库-->
                     <!--                    <dockerHost>http://localhost:2375</dockerHost>-->

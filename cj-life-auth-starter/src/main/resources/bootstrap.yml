@@ -4,7 +4,7 @@ server:
     context-path: /
 spring:
   profiles:
-    active: ${life.spring.profiles.active:dev}
+    active: ${cj.life.spring.profiles.active:dev}
   mvc:
     pathmatch:
       #swagger2的bug，只认这种方式，而springboot2.6默认已不是这种匹配模式。否则启动时报错
@@ -15,11 +15,6 @@ spring:
     #所以不论服务提供者还是feign消费者，spring.application.name和eureka.instance.appname都配置就最好了
     #feign调用方大小写不区分，而注册中心永远显示为大写
     name: cj-life-auth
-  redis:
-    port: ${life.spring_redis_port:6379}
-    database: ${life.spring_redis_db:0}
-    password: ${life.spring_redis_pwd:123456}
-    hostName: ${life.spring_redis_host:localhost}
   jta:
     atomikos:
       connectionfactory:
@@ -31,17 +26,13 @@ spring:
 logging:
   level:
     root: info
-life:
-  security:
-    auth_web:
-      host: ${life.security_auth_web_host:http://localhost:8060}
-      confirm_access_url: /confirm_access
-      login_url: /login
-    whitelist:
-      - /login
-      - /oauth/**
-      - /logout
-    static_resources:
-      - /assets/**
-      - /css/**
-      - /images/**
+management:
+  endpoints:
+    web:
+      exposure:
+        #在不重启应用的情况下，放开从配置中心刷新配置的方法，refresh|bus-refresh|*
+        #刷新原理是用actuator重启了应用
+        #不清楚支持哪些方法可在浏览器中查看支持的方法：http://localhost:30300/actuator/
+        #用postman刷新 POST http://localhost:30300/actuator/refresh
+        #POST http://localhost:30300/actuator/bus-refresh
+        include: refresh
