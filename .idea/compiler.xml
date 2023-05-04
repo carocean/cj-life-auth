@@ -15,7 +15,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="cj-life-auth" options="-parameters" />
+      <module name="cj-life-auth" options="" />
       <module name="cj-life-auth-framework" options="-parameters" />
       <module name="cj-life-auth-remote" options="-parameters" />
       <module name="cj-life-auth-starter" options="-parameters" />
